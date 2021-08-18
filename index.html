@@ -9,7 +9,16 @@
 <body>
     
    <script>
-       fetch("")
+       async function getData(){
+         const response = await fetch("zonann.csv") 
+         const data = await response.text()
+         console.log(data)
+       }
+       
+       getData().catch(err =>{
+           console.log(err)
+           console.error(err)
+       })
    </script> 
 </body>
 </html>
