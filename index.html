@@ -13,12 +13,17 @@
          const response = await fetch("zonann.csv") 
          const data = await response.text()
          console.log(data)
+
+         const rows = data.split("\n").slice(1)
+         for (let i = 0; i < rows.length; i++){
+             rows.forEach(row => {
+                 
+             })
+         }
+         console.log(rows)
        }
        
-       getData().catch(err =>{
-           console.log(err)
-           console.error(err)
-       })
+       getData()
    </script> 
 </body>
 </html>
