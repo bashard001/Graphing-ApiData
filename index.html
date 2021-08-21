@@ -13,14 +13,19 @@
     <script src="./node_modules/chart.js/dist/Chart.min.js"></script>
     
     <script>
+
+
+       async function graphData(){
+         const gData =  await getData()
     var ctx = document.getElementById('myChart').getContext('2d');
+    
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: gData.xLables,
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                label: 'Global Average Temp in C',
+                data: gData.yData,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -47,11 +52,11 @@
                 }
             }
         }
-    });
-    </script>
-
-   <script>
+    });}
+   
        async function getData(){
+        let xLables = [];
+let yData = [];
          const response = await fetch("ZonAnn.Ts+dSST.csv") 
          const data = await response.text()
          console.log(data)
@@ -60,13 +65,17 @@
         
              table.forEach(r => {
                 const cols = r.split(',')
-                const year = row[0]
-                const temp = row[1]
+                const year = cols[0]
+                xLables.push(year)
+                const temp = cols[1]
+                yData.push(parseFloat(temp) + 14)
                 console.log(year, temp)
              })
+             return {xLables, yData}
        }
        
-       getData()
+      
+       graphData()
    </script> 
 </body>
 </html>
