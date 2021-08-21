@@ -27,7 +27,8 @@ async function graphData() {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    min: 12,
+                    max: 16
                 }
             }
         }
