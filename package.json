@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "chart.js": "^2.8.0"
-  }
+  },
+  "name": "graphing-apidata",
+  "version": "1.0.0",
+  "main": "index.html",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bashard001/Graphing-ApiData.git"
+  },
+  "author": "bashar daseh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bashard001/Graphing-ApiData/issues"
+  },
+  "homepage": "https://github.com/bashard001/Graphing-ApiData#readme",
+  "description": ""
 }
